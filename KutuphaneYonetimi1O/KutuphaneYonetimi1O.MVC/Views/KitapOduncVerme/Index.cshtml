@@ -1,0 +1,56 @@
+﻿@*@using KutuphaneYonetimi1OEntites.Model
+@model List<KitapHareket>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="font-family:'Century Gothic'">
+
+    <div style="text-align: center; color: white; background-color: #1C2E3E;margin:15px">
+        <h2><b> Kitap Odünç Verme </b></h2>
+    </div>
+
+    <div style="margin:15px">
+        <table class="table table-bordered">
+            <thead>
+                <tr style="text-align: center; background-color: #1C2E3E;color:white">
+                    <th style="width:7%">KitapHareketId</th>
+                    <th>KitapAdi</th>
+                    <th>Uye Ad Soyad</th>
+                    <th>Personel Ad Soyad</th>
+                    <th>Alma Tarihi</th>
+                    <th>İade Tarihi</th>
+                    <th>İşlem</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var ktpVer in Model)
+                {
+                <tr>
+                    <td>@ktpVer.KitapHareketId</td>
+                    <td>@ktpVer.Kitap.KitapAdi</td>
+                    <td>@ktpVer.Uye.UyeAdi&nbsp;@ktpVer.Uye.UyeSoyadi</td>
+                    <td>@ktpVer.Personel.PersonelAdi&nbsp;@ktpVer.Personel.PersonelSoyadi</td>
+                    <td>@ktpVer.AlmaTarihi.ToShortDateString()</td>
+                    <td>@ktpVer.IadeTarihi.ToShortDateString()</td>
+                    <td>
+                        <a class="btn btn-danger" href="/KitapOduncVerme/Sil/@ktpVer.KitapHareketId">Sil</a>&nbsp;
+                       
+                    </td>
+                    
+
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <a class="btn" href="/KitapOduncVerme/KitapOduncVerme/" style="text-align: center; background-color: #1C2E3E;color:white;margin:15px"> <b>Kitap ver</b> </a>
+</div>*@
+
+
+
+
+

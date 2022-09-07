@@ -1,0 +1,48 @@
+﻿@using KutuphaneYonetimi1OEntites.Model
+@model List<YayinEvi>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="text-align:center;background-color:#1C2E3E;color:white">
+    <b>Yayın Evleri</b>
+</h2>
+
+<div style="margin:15px">
+    <table class="table table-bordered">
+        <thead>
+            <tr style="text-align: center; background-color: #1C2E3E; color: white">
+                <th>Id</th>
+                <th>Adı</th>
+                <th>Aciklama</th>
+                <th>Durumu</th>
+                <th>İşlem</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var yayinevi in Model)
+            {
+                <tr style="text-align:center">
+                    <td>@yayinevi.YayinEviId</td>
+                    <td>@yayinevi.YayinEviAdi</td>
+                    <td>@yayinevi.YayinEviAciklama</td>
+                    <td>@yayinevi.YayinEviDurumu</td>
+                    <td>
+                        <a class="btn btn-success" href="/YayinEvi/Guncelle/@yayinevi.YayinEviId">Güncelle</a>&nbsp;
+                        <a class="btn btn-danger" href="/YayinEvi/Sil/@yayinevi.YayinEviId">Sil</a>&nbsp;
+                        <a class="btn btn-warning" href="/YayinEvi/YayinEviKitaplari/@yayinevi.YayinEviId">YayinEviKitaplari</a>
+                    </td>
+                </tr>
+
+
+            }
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <a class="btn btn-success"href="/YayinEvi/Ekle/">Yeni Yayin Evi Ekle</a>
+</div>
+

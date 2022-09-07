@@ -1,0 +1,51 @@
+﻿@*@model KutuphaneYonetimi1OEntites.Model.KitapHareket
+@{
+    ViewBag.Title = "KitapOduncVerme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="font-family:'Century Gothic'">
+
+    <div style="text-align: center; background-color: #1C2E3E;color:white;margin:15px">
+        <h2><b>Kitap ver</b></h2>
+    </div>
+</div>
+
+<div style="margin:15px">
+    @using (Html.BeginForm("KitapOduncVerme", "KitapOduncVerme", FormMethod.Post))
+    {
+        @Html.Label("Kitap Adı")
+        @Html.DropDownListFor(x => x.KitapId, (List<SelectListItem>)ViewBag.Kitap, new { @class = "form-control" })
+        <br />
+        @Html.Label("Üye Adı")
+        @Html.DropDownListFor(x => x.UyeId, (List<SelectListItem>)ViewBag.Uye, new { @class = "form-control" })
+
+        <br />
+        @Html.Label("Personel Adı")
+        @Html.DropDownListFor(x => x.PersonelId, (List<SelectListItem>)ViewBag.Personel, new { @class = "form-control" })
+
+        <br />
+        
+
+        <label for="inputName" style="text-align:left" class="col-sm-1 col-form-label">Alma Tarihi</label>
+           
+        <input type="date" name="AlmaTarihi" class="form-control" id="inputName" placeholder="AlmaTarihi">
+          
+           
+        <br />
+       
+        <label for="inputName" style="text-align:left" class="col-sm-1 col-form-label">İade Tarihi</label>
+          
+        <input type="date" name="IadeTarihi" class="form-control" id="inputName" placeholder="IadeTarihi">
+        <br />
+           
+
+           
+       
+
+
+
+        <button style="text-align: center; background-color: #1C2E3E; color: white"> <b>Kitap Ver</b></button>
+    }
+</div>*@
+
